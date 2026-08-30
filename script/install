@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# install runs each topic's install.sh, if it has one.
+# Topics are run in alphabetical order unless you rename this loop.
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+DOTFILES_ROOT="$(pwd -P)"
+
+find_files () {
+  find "$DOTFILES_ROOT" -maxdepth 2 -name "$1" -not -path '*.git*'
+}
+
+install_topic () {
+  local topic_installer="$1"
+  echo ""
+  echo "  Running $topic_installer"
+  echo "----------------------------------"
+  bash "$topic_installer"
+}
+
+for installer in $(find_files "install.sh"); do
+  install_topic "$installer"
+done
+
+echo ""
+echo "  All install scripts done."

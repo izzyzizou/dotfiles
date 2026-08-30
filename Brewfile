@@ -1,0 +1,20 @@
+cask_args appdit: '/Applications'
+
+tap 'homebrew/bundle'
+
+brew 'streamlink'
+brew 'sqlite'
+brew 'ruby'
+brew 'rust'
+brew 'lazygit'
+
+cask 'telegram'
+cask 'zed'
+cask 'vlc'
+cask 'alfred'
+cask 'spotify'
+cask 'iterm2'
+cask 'handbrake'
+cask 'whatsapp'
+cask 'thunderbird'
+cask 'discord'

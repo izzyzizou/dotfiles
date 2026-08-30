@@ -1,0 +1,24 @@
+# Load path.zsh files first, from every topic, so $PATH is set up before anything else runs.
+for file in "$HOME"/.dotfiles/*/path.zsh; do
+    [ -r "$file" ] && [ -f "$file"] && source "$file"
+done
+
+# Load everything but path.zsh and completion.zsh
+for file in "$HOME"/.dotfiles/*/*.zsh; do
+    case "$file" in *path.zsh|*completion.zsh) continue ;;
+    esac [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+
+# Load completion.zsh files last, since they often depend on things above.
+for file in "$HOME"/.dotfiles/*completion.zsh; do
+    [ -r "$file"] && [-f "$file" ] && source "$file"
+done
+
+unset file
+
+# Add bin/ to $PATH so any scripts in there are available everywhere.
+export PATH="$HOME'/.dotfiles/bin:$PATH"
+
+# Machine-local overrides that shouldn't be checked into git
+# (API keys, work-specific aliases, etc.) live here and are gitignored.
+[ -f "$HOME/.zshrc.local"] && source "$HOME/.zshrc.local"

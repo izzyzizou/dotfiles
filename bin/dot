@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# dot: install/update dependencies. Run this occasionally to keeo your
+# environment fresh. Only does real work on macOS right now.
+
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+
+source script/install
