@@ -154,3 +154,5 @@ fi
 
 echo ''
 echo '  All installed!'
+
+exec zsh

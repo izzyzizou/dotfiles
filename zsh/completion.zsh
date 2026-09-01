@@ -3,6 +3,11 @@
 # autoload -Uz compinit
 # compinit
 
+r(){
+    cd $HOME/git-repos/$1
+}
+complete -W "`ls $HOME/git-repos`" r
+
 
 # matches case insensitive for lowercase
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
