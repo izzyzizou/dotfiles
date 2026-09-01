@@ -1,7 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="random"
-ZSH_THEME_RANDOM_CANDIDATES=( "apple" "robbyrussell" "agnoster" )
-plugins=(git brew)
+ZSH_THEME="agnoster"
+plugins=(git zsh-autosuggestions brew)
 DISABLE_MAGIC_FUNCTIONS="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"

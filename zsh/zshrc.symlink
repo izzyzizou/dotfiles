@@ -19,7 +19,7 @@ done
 unset file
 
 # Add bin/ to $PATH so any scripts in there are available everywhere.
-export PATH="$HOME'/.dotfiles/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # Machine-local overrides that shouldn't be checked into git
 # (API keys, work-specific aliases, etc.) live here and are gitignored.
