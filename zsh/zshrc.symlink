@@ -24,3 +24,4 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # Machine-local overrides that shouldn't be checked into git
 # (API keys, work-specific aliases, etc.) live here and are gitignored.
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
