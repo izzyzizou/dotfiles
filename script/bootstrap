@@ -135,6 +135,10 @@ install_dotfiles () {
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
+
+  # nvim reads ~/.config/nvim, which the *.symlink naming can't express
+  mkdir -p "$HOME/.config"
+  link_file "$DOTFILES_ROOT/nvim" "$HOME/.config/nvim"
 }
 
 # setup_gitconfig
